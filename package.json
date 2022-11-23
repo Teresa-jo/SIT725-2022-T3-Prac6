@@ -1,5 +1,5 @@
 {
-  "name": "sit725-2022-t3-prac2",
+  "name": "sit725-2022-t3-prac3",
   "version": "1.0.0",
   "description": "sit725 Practicals",
   "main": "server.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Teresa-jo/SIT725-2022-T3-Prac2.git"
+    "url": "git+https://github.com/Teresa-jo/SIT725-2022-T3-Prac3.git"
   },
   "keywords": [
     "Express",
@@ -17,9 +17,9 @@
   "author": "Yaru Xu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac2/issues"
+    "url": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac3/issues"
   },
-  "homepage": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac2#readme",
+  "homepage": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac3#readme",
   "dependencies": {
     "express": "^4.18.2"
   }

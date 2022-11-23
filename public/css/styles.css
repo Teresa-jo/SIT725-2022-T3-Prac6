@@ -1,0 +1,30 @@
+.navbar-size {
+    width: 95%;
+    margin: 0 auto;
+}
+.user-image-size {
+    height: 56px;
+    margin: 4px 0;
+}
+.main-body {
+    background-color: rgb(216, 237, 216);
+    color: black;
+    height: calc(150vh - 70px);
+}
+
+.materialboxed-image {
+    margin: 0 auto;
+    height: 180px;
+}
+.click-me-button {
+    background-color: pink;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: px;
+  }
+  
+  p {
+    font-size: 20px;
+  }
