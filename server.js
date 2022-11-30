@@ -15,7 +15,7 @@ var MongoClient = require('mongodb').MongoClient;
 const uri = 'mongodb+srv://Yaru:Newworld1223@cluster1.ehpmsoe.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(uri, {useNewUrlParser: true})
 
-const insertProjects = (callback) => {
+const insertProjects = (project, callback) => {
     projectCollection.insert(project,callback);
   }
 
