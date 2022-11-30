@@ -1,29 +1,83 @@
 var express = require("express")
 var app = express()
+var cors = require("cors");
+let projectCollection;
 
 app.use(express.static(__dirname+'/public'))
 app.use(express.json());
-app.use(express.urlencoded({extends: false}));
+app.use(express.urlencoded({ extended: false }));
+app.use(cors())
 
-/*const addNumbers = (number1, number2) =>{
-          var num1 = parseInt(number1)
-          var num2 = parseInt(number2)
-          var result = num1 + num2;
-          return result;
-}
+// MongoDb connection
+var MongoClient = require('mongodb').MongoClient;
 
-app.get("/addTwoNumbers", (req,res) => {
-          var num1 = req.query.number1
-          var num2 = req.query.number2
-          var result = addNumbers(number1, number2)
-          res.json({statusCode: 200, data: result, message:'Success'})
+// Add database
+const uri = 'mongodb+srv://Yaru:Newworld1223@cluster1.ehpmsoe.mongodb.net/?retryWrites=true&w=majority'
+const client = new MongoClient(uri, {useNewUrlParser: true})
 
-})
-*/
+const insertProjects = (callback) => {
+    projectCollection.insert(project,callback);
+  }
+
+const getProjects = (callback) => {
+    projectCollection.find({}).toArray(callback);
+  }
+
+const createCollection = (collectionName) => {
+    client.connect((err, db) => {
+      projectCollection = client.db().collection(collectionName);
+      if (!err){
+        console.log("MonogoDB Connected")
+      }
+      else {
+        console.log("DB Error: ", err);
+        process.exit(1);
+      }
+    })
+  }
+
+const cardList = [
+    {
+        title: "Kitten",
+        image: "images/image2.jpg",
+        link: "About Kitten",
+        description: "Demo description about kitten 2"
+    },
+    {
+        title: "Kitten 3",
+        image: "images/flower1.jpg",
+        link: "About Kitten 3",
+        description: "Demo description about kitten 3"
+    }
+]
+
+app.get('/api/projects', (req, res) => {
+    getProjects((err, result) => {
+      if(err) {
+        res.json({statusCode: 400, message: err})
+      }
+      else{
+        res.json({statusCode: 200, message: "Success", data: result})
+      }
+    })
+  })
+
+  app.post('/api/projects', (req, res) => {
+    console.log("New Project added", req.body)
+    var newProject = req.body;
+    insertProjects (newProject,(err, result) => {
+      if(err) {
+        res.json({statusCode: 400, message: err})
+      }
+      else{
+        res.json({statusCode: 200, message: "Success", data: result})
+      }
+    })
+  })
 
 var port = process.env.port || 3000;
-
 app.listen(port,()=>{
     console.log("App listening to http://localhost:"+port)
+    createCollection('Flowers')
 })  
 
