@@ -15,7 +15,7 @@ var MongoClient = require('mongodb').MongoClient;
 const uri = 'mongodb+srv://Yaru:Newworld1223@cluster1.ehpmsoe.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(uri, {useNewUrlParser: true})
 
-const insertProjects = (project, callback) => {
+const insertProjects = (project,callback) => {
     projectCollection.insert(project,callback);
   }
 
@@ -80,4 +80,5 @@ app.listen(port,()=>{
     console.log("App listening to http://localhost:"+port)
     createCollection('Flowers')
 })  
+
 
