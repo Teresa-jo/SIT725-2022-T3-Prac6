@@ -4,11 +4,12 @@
   "description": "sit725 Projects",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Teresa-jo/SIT725-2022-T3-Prac5.git"
+    "url": "git+https://github.com/Teresa-jo/SIT725-2022-T3-Prac6.git"
   },
   "keywords": [
     "Express",
@@ -17,13 +18,16 @@
   "author": "Yaru Xu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac5/issues"
+    "url": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac6/issues"
   },
-  "homepage": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac5#readme",
+  "homepage": "https://github.com/Teresa-jo/SIT725-2022-T3-Prac6#readme",
   "dependencies": {
+    "chai": "^4.3.7",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongodb": "^4.12.1"
+    "mocha": "^10.2.0",
+    "mongodb": "^4.12.1",
+    "request": "^2.88.2"
   }
 }
